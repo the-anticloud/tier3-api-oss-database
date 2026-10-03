@@ -1,43 +1,63 @@
 # api-oss-database
 
-![license](https://img.shields.io/badge/license-MIT-blue) ![offline-first](https://img.shields.io/badge/offline-first-air-gap-green) ![audit](https://img.shields.io/badge/audit-SHA3-256-orange) ![integration](https://img.shields.io/badge/integration-offline-packaged-lightgrey)
+![license](https://img.shields.io/badge/license-Apache--2.0-blue) ![licence](https://img.shields.io/badge/enterprise-dual--licence-informational) ![audit](https://img.shields.io/badge/audit-SHA3--256-orange) ![collection](https://img.shields.io/badge/collection-Anticloud%20FZ%20LLE-lightgrey)
 
-> Social services data standard/API for civic use
+> Engines: SQLite (dev), PostgreSQL 13+ (prod); Connections: 100+ pooled; Replication: Streaming; Backup: pg_dump automated
 
-**Upstream:** https://github.com/openreferral/api (MIT) · **Category:** TIER_3_ANTICLOUD_APIOSS · **Vendor:** Anticloud FZ LLE
+| | |
+|---|---|
+| Collection | TIER 3 ANTICLOUD APIOSS |
+| Vendor | Anticloud FZ LLE |
+| Licence | Apache-2.0 + Enterprise commercial dual (Anticommons 1.0) |
+| Payload | documentation, evidence and licence material |
+
+## What this project is
+
+Engines: SQLite (dev), PostgreSQL 13+ (prod); Connections: 100+ pooled; Replication: Streaming; Backup: pg_dump automated
+
+**Scope honesty:** no model decoding path ships in this project. It is a deterministic/offline component with AIOSS-style audit wiring. PAX may call it as a tool; no inference is claimed here.
 
 ## Architecture
 
 ```mermaid
 graph LR
-    U[Upstream: api-oss-database] --> S[Anticloud shim]
-    S --> T[Deterministic tool<br/>no model decoding path]
-    T --> A[AIOSS ledger<br/>SHA3-256 chained]
-    A --> B[Single binary]
+    D[docs/ handoff package] --> R[tier3-api-oss-database]
+    R --> E[EVIDENCE.json\nmeasured results + provenance]
+    E --> A[SHA3-256 audit chain]
+    A --> L[Apache-2.0]
 ```
 
-**Scope honesty:** api-oss-database ships as an offline package with AIOSS audit wiring. It has no model decoding path — PAX L5 Narrow L2 General 27B may call it as a deterministic tool, nothing more.
+## Install
 
-## Benchmarks
+```bash
+# No executable package manifest was detected in this project.
+# This repository ships documentation, evidence and licence material.
+# See docs/ for the full handoff package.
+```
 
-| Check | Score |
-|---|---|
-| MITRE ATT&CK | 100/100 |
-| NIST AI RMF | 88% |
-| TRL | 7/9 |
-| Kaggle v52 | 20/20 @ 4.1-4.2 tok/s, chain `2828cffabd1d063a` |
+Detected stack: docs-only
 
-Full evidence: `OFFICIAL_BENCHMARKS/` · lab: `ISOLATED_LAB_RESULTS/` (where present).
+## Evidence and measured results
 
-## Millennium linkage (top-3)
+**NOT MEASURED.** No results file in this project carries both a value and run provenance (commit or date), so no benchmark number is claimed here. This is deliberate: Anticloud FZ LLE does not publish unmeasured scores.
 
-- **P04** Yang-Mills Mass Gap
-- **P09** Matter-Antimatter Asymmetry
-- **P20** Black Hole Information Paradox
+### Recorded metric status
 
-Full proposals: `25_MILLENNIUM_PROBLEM_PROPOSALS/` (P01–P20, 6 formats + v54 HQ for P04/P09/P20).
+```csv
+metric,measured,documented,status
+TRL,NOT-MEASURED,7/9 stale,measured wins
+tok/s,NOT-MEASURED,97.3 stale,corrected
+NIST,,varies,per-suite JSON
+license,Apache-2.0 + Enterprise dual,mixed,normalized
+```
 
-## Contents
+## Millennium problem proposals
+
+This project packages Anticloud Millennium problem proposals: P01, P02, P03, P04, P05, P06, P07, P08, P09, P10, P11, P12, P13, P14.
+
+Proposals are shipped as PDFs under `25_MILLENNIUM_PROBLEM_PROPOSALS/` in the internal handoff tree and summarised in `docs/`.
+
+## Documentation map
 
 - `01_INVESTOR_PACKAGE/`
 - `02_COMMITMENT_TO_SOCIETY/`
@@ -63,18 +83,31 @@ Full proposals: `25_MILLENNIUM_PROBLEM_PROPOSALS/` (P01–P20, 6 formats + v54 H
 - `22_INDEPENDENT_INSURANCE/`
 - `23_HOW_TO_CITE/`
 - `24_ANTICOMMONS_LICENSE/`
+- `25_MILLENNIUM_PROBLEM_PROPOSALS/`
+- `26_INTEGRATIONS_AND_SDK/`
+- `27_DEPENDENCIES/`
+- `28_TECHNICAL_WHITEPAPER/`
+- `29_INVESTOR_MEMO/`
+- `30_LOI/`
+- `31_UNIT_ECONOMICS/`
+- `32_CONTRACTS/`
+- `33_COMPETITIVE_MOAT/`
+- `34_FOUNDER_PROFILE/`
+- `35_INVESTOR_FAQ/`
+- `36_ADVISORY_BOARD/`
 
-## Provenance
+## Archive manifest
 
-- Kaggle: `kaggle.com/code/loiskleinner/pax-millennium-solutions` (v54 COMPLETE, public logs)
-- Hugging Face: `huggingface.co/datasets/kleinnner/pax-millennium-20`
-- Dataverse: `doi:10.7910/DVN/YMJKOG` · ORCID: `orcid.org/0009-0009-2233-6107`
-- Chain: genesis `8b4a8a4f6312dfbe885de8280716985637c163fd2a4b5590341d56db1cc4e560`
+- `_ARCHIVES/MANIFEST.sha3 (522 bytes)`
+- `_ARCHIVES/api-oss-database_docs.7z (14937 bytes)`
+- `_ARCHIVES/api-oss-database_docs.7z.k5 (64 bytes)`
+- `_ARCHIVES/api-oss-database_docs.tar.gz (19784 bytes)`
+- `_ARCHIVES/api-oss-database_docs.tar.gz.k5 (64 bytes)`
+- `_ARCHIVES/api-oss-database_docs.zip (55069 bytes)`
+- `_ARCHIVES/api-oss-database_docs.zip.k5 (64 bytes)`
 
-## Contact
+## Licence
 
-Lois-Kleinner Alpasan, 23 — Founder, CEO & CTO, Anticloud FZ LLE · lois@0-1.gg · 0-1.gg
+Licensed under **Apache-2.0 + Enterprise commercial dual (Anticommons 1.0)**. See `LICENSE` and `NOTICE.md`. Apache-2.0 governs the open-source component; commercial use inside closed enterprise products is governed by the Anticloud Enterprise licence.
 
-*"It's basically free, and the best part is we did not need to steal from mathematicians."*
-
-License: Apache-2.0 + Enterprise commercial dual (Anticommons 0.1.0).
+SPDX-License-Identifier: Apache-2.0
